@@ -1,0 +1,181 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+:root {
+    --primary-color: #FF6F61;
+    --secondary-color: #4B9CD3;
+    --white-color: #FFF;
+    --body-color: #F4F4F9;
+    --gradient-color: linear-gradient(to right, #FF6F61, #4B9CD3);
+}
+
+.home-section {
+    padding: 2rem 0;
+    text-align: center;
+    width: 100vw;
+    height: 100vh; /* Center the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px);
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.city-card {
+    width: 80%;
+    max-width: 900px;
+    position: relative; /* To position the overlay */
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: var(--current-animation) 2s ease-in-out;
+}
+
+.city-image {
+    width: 100%;
+    height: auto;
+}
+
+.city-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.city-name {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.city-description {
+    font-size: 1.2rem;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.nav-button:hover {
+    background: var(--gradient-color);
+    color: var(--white-color);
+    opacity: 1;
+}
+
+.nav-button.left {
+    left: 1rem;
+}
+
+.nav-button.right {
+    right: 1rem;
+}
+
+.about-more-button {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    margin-top: 1rem;
+}
+
+.about-more-button:hover {
+    background: var(--gradient-color);
+    color: var(--white-color);
+    opacity: 1;
+}
