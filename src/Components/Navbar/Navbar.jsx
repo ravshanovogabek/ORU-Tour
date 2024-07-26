@@ -4,6 +4,7 @@ import './navbar.css';
 import { FaSailboat } from "react-icons/fa6";
 import { IoMdCloseCircle } from "react-icons/io";
 import { TbGridDots } from "react-icons/tb";
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -51,6 +52,9 @@ const Navbar = () => {
               <a href="#">Book Now</a>
             </button>
           </ul>
+          <div className="languageSwitcherContainer">
+            <LanguageSwitcher /> {/* Add the language switcher here */}
+          </div>
           <div className="closeNavbar" onClick={toggleNav}>
             <IoMdCloseCircle className='icon' />
           </div>

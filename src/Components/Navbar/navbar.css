@@ -122,4 +122,9 @@
       display: flex;
     }
   }
+
+  .language-switcher {
+    margin-left: auto;
+     /* Pushes the language switcher to the end of the navbar */
+  }
   

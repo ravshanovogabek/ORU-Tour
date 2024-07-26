@@ -1,7 +1,10 @@
 import React from 'react';
 import './about.css';
+import { useTranslation } from 'react-i18next';
 
 const About = ({ selectedCity }) => {
+  const { t } = useTranslation();
+
   if (!selectedCity || !selectedCity.moreInfo) {
     return <div>Loading...</div>;
   }
