@@ -1,80 +1,40 @@
+/* Keyframe animations for city card transitions */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes zoomIn {
-    from {
-        transform: scale(1.1);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 @keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes slideInTop {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes slideInBottom {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-:root {
-    --primary-color: #FF6F61;
-    --secondary-color: #4B9CD3;
-    --white-color: #FFF;
-    --body-color: #F4F4F9;
-    --gradient-color: linear-gradient(to right, #FF6F61, #4B9CD3);
-}
-
+/* Style for the home section */
 .home-section {
     padding: 2rem 0;
     text-align: center;
     width: 100vw;
-    height: 100vh; /* Center the content */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,6 +42,7 @@
     overflow: hidden;
 }
 
+/* Background blur effect */
 .background-blur {
     position: absolute;
     top: 0;
@@ -94,74 +55,94 @@
     z-index: -1; /* Ensure it's behind other content */
 }
 
+/* Container for city cards */
+.city-card-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    padding: 0 2rem; /* Adjust padding as needed */
+}
+
+/* Style for each city card */
 .city-card {
-    width: 80%;
-    max-width: 900px;
-    position: relative; /* To position the overlay */
+    width: 300px;
+    height: 400px; /* Fixed height for taller images */
+    max-width: 300px;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: var(--current-animation) 2s ease-in-out;
+    animation: var(--current-animation) 2s ease-in-out; /* Apply animation */
+    flex: 0 0 auto; /* Prevent card from shrinking */
+    display: flex;
+    flex-direction: column;
 }
 
+/* Style for the city image */
 .city-image {
     width: 100%;
-    height: auto;
+    height: 60%; /* Adjust height to make it taller */
+    object-fit: cover; /* Ensure the image covers the container */
 }
 
+/* Style for the information overlay on city card */
 .city-info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    height: 40%; /* Adjust to fit the remaining space */
     color: var(--white-color);
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 0 0 1rem 1rem;
 }
 
+/* Style for the city name */
 .city-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
+/* Style for the city description */
 .city-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
+/* Style for navigation buttons */
 .nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--primary-color);
+    background: var(--);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
     font-weight: bold;
     color: var(--secondary-color);
     font-size: 2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     opacity: 0.7;
     transition: opacity 0.3s;
 }
 
+/* Style for navigation buttons on hover */
 .nav-button:hover {
     background: var(--gradient-color);
     color: var(--white-color);
     opacity: 1;
 }
 
+/* Specific styles for left and right navigation buttons */
 .nav-button.left {
-    left: 1rem;
+    left: 5rem;
 }
 
 .nav-button.right {
-    right: 1rem;
+    right: 5rem;
 }
 
+/* Style for the "About More" button */
 .about-more-button {
-    background: var(--primary-color);
+    background: turquoise;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -174,8 +155,10 @@
     margin-top: 1rem;
 }
 
+/* Style for "About More" button on hover */
 .about-more-button:hover {
     background: var(--gradient-color);
     color: var(--white-color);
     opacity: 1;
 }
+

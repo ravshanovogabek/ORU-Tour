@@ -3,7 +3,7 @@ import './main.css';
 
 const Main = () => {
   return (
-    <section id="main"  className="main-section">
+    <section id="main" className="main-section">
       <h1 className="main-title">Welcome to ORU Tour</h1>
       <p className="main-subtitle">Explore the world with us and discover amazing destinations.</p>
       
@@ -31,6 +31,16 @@ const Main = () => {
         </div>
         
         <button className="search-button">Search Now</button>
+      </div>
+
+      <div className="iframe-container">
+        <iframe 
+          src='https://my.spline.design/map-b8fad2dcd54d6ce4cef45b602bc267af/' 
+          frameBorder='0' 
+          width='100%' 
+          height='500' 
+          title='Interactive Rocket'
+        ></iframe>
       </div>
     </section>
   );
